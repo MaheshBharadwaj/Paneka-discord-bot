@@ -2,3 +2,4 @@ __pycache__/
 team-data.json
 team_mapper.py
 cache.json
+cache/

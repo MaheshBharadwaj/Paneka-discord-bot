@@ -1,11 +1,10 @@
 # bot.py
 import os
 import random
-import discord
 
 from discord.ext import commands
 from dotenv import load_dotenv
-from test import getStandings
+from source.bot_commands import *
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
@@ -36,7 +35,7 @@ async def standingsAll(ctx, arg=''):
     text = getStandings(arg, mode='all')
     await ctx.send(text)
 
-@bot.command(name='standings', help='Display Standings with only Matches played & points')
+@bot.command(name='standizngs', help='Display Standings with only Matches played & points')
 async def standings(ctx, arg=''):
     text = getStandings(arg, mode='long')
     await ctx.send(text)
@@ -44,11 +43,7 @@ async def standings(ctx, arg=''):
 
 @bot.command(name='help')
 async def help(ctx):
-    embed=discord.Embed(title="Paneka-Help!", description="Shows available commands and their functions", color=0xf58300)
-    embed.set_thumbnail(url="https://img.icons8.com/fluent/144/000000/get-help.png")
-    embed.add_field(name=":exclamation: standings-all [PL or SPA or SA]", value="   Detailed Standings, with team codes", inline=False)
-    embed.add_field(name=":exclamation: standings [PL or SPA or SA]", value="   Display Standings", inline=False)
-    embed.set_footer(text='Requested by ' + str(ctx.author))
-    await ctx.send(embed=embed)
+    helpEmbed = getHelpEmbed(ctx)
+    await ctx.send(embed=helpEmbed)
 
 bot.run(TOKEN)

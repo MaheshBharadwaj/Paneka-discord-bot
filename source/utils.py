@@ -1,6 +1,13 @@
 import json
 
 def putTableAll(obj):
+    """
+    Displays the standings in long format
+    Displays team code if available or first 4 letters of team name,
+    Matches Played, Won, Drawn, Lost
+    Points
+    Goals For, Against, Difference
+    """
     try:
         assert(type(obj) == dict)
 
@@ -8,7 +15,9 @@ def putTableAll(obj):
         mapper = json.load(fin)
 
 
-        str_re = '```bash\nLEAGUE: ' + str(obj['competition']['name']) + ' ' *(45 -2 - 8 - 10 - len(str(obj['competition']['name']))) + 'MATCHDAY: ' +str(obj['season']['currentMatchday']) + '\n' 
+        str_re = '```bash\nLEAGUE: ' + str(obj['competition']['name']) +\
+                 ' ' *(45 -2 - 8 - 10 - len(str(obj['competition']['name']))) +\
+                 'MATCHDAY: ' +str(obj['season']['c3urrentMatchday']) + '\n' 
         str_re += '╔════╤══════╤════╤════╤════╤════╤═════╤═════╗\n'
         str_re += '║ SN │ TEAM │ M  │ W  │ D  │ L  │ PTS │ GD  ║\n'
         str_re += '╠════╪══════╪════╪════╪════╪════╪═════╪═════╣\n'
@@ -27,11 +36,16 @@ def putTableAll(obj):
         return 'Error!'
 
 def putTableLong(obj):
+    """
+    Displays a basic standings showing Team Names,
+    Matches Played and Points obtained.
+    """
     try:
         assert(type(obj) == dict)
-        fin = open('source/teamcodes.json', 'r')
 
-        str_re = '```bash\nLEAGUE: ' + str(obj['competition']['name']) + ' ' *(45 -2 - 8 - 10 - len(str(obj['competition']['name']))) + 'MATCHDAY: ' +str(obj['season']['currentMatchday']) + '\n' 
+        str_re = '```bash\nLEAGUE: ' + str(obj['competition']['name']) +\
+                 ' ' *(45 -2 - 8 - 10 - len(str(obj['competition']['name']))) +\
+                 'MATCHDAY: ' +str(obj['season']['currentMatchday']) + '\n' 
         str_re += '╔════╤══════════════════════════╤═════╤═════╗\n'
         str_re += '║ SN │        TEAM NAME         │ MAT │ PTS ║\n'
         str_re += '╠════╪══════════════════════════╪═════╪═════╣\n'
@@ -42,7 +56,6 @@ def putTableLong(obj):
             str_re += text
             
         str_re += '╚════╧══════════════════════════╧═════╧═════╝```'
-        fin.close()
         return str_re
     
     except AssertionError:
