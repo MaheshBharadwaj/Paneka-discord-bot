@@ -17,7 +17,7 @@ def putTableAll(obj):
 
         str_re = '```bash\nLEAGUE: ' + str(obj['competition']['name']) +\
                  ' ' *(45 -2 - 8 - 10 - len(str(obj['competition']['name']))) +\
-                 'MATCHDAY: ' +str(obj['season']['c3urrentMatchday']) + '\n' 
+                 'MATCHDAY: ' +str(obj['season']['currentMatchday']) + '\n' 
         str_re += '╔════╤══════╤════╤════╤════╤════╤═════╤═════╗\n'
         str_re += '║ SN │ TEAM │ M  │ W  │ D  │ L  │ PTS │ GD  ║\n'
         str_re += '╠════╪══════╪════╪════╪════╪════╪═════╪═════╣\n'
@@ -60,3 +60,10 @@ def putTableLong(obj):
     
     except AssertionError:
         return 'Error!'
+
+
+def fetchImage(code):
+    if code in ['PL', 'FL1', 'BL', 'SPA', 'SA']:
+        return f"source/logos/{code}.jpg"
+    else:
+        return None

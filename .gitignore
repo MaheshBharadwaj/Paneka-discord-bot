@@ -3,3 +3,5 @@ team-data.json
 team_mapper.py
 cache.json
 cache/
+test*.py
+logos/
