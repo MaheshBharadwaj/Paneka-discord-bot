@@ -1,11 +1,13 @@
 # bot.py
 import os
 import random
-import discord
 
+import source.bot_commands as bot_commands
+
+import discord
 from discord.ext import commands
 from dotenv import load_dotenv
-from test import getStandings
+from source.utils import fetchImage
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
@@ -33,22 +35,28 @@ async def nine_nine(ctx):
 
 @bot.command(name='standings-all', help='Displays standings with all details')
 async def standingsAll(ctx, arg=''):
-    text = getStandings(arg, mode='all')
+    text = bot_commands.getStandings(arg, mode='all')
     await ctx.send(text)
 
 @bot.command(name='standings', help='Display Standings with only Matches played & points')
 async def standings(ctx, arg=''):
-    text = getStandings(arg, mode='long')
+    text = bot_commands.getStandings(arg, mode='long')
     await ctx.send(text)
 
+@bot.command(name='fixtures')
+async def fixtures(ctx, code='', limit=5):
+    embed = bot_commands.getFixtures(code, limit)
+    path = fetchImage(code)
+    if path is not None:
+        embed.set_thumbnail(url='attachment://image.jpg')
+        embed.set_footer(text='Requested By: ' + str(ctx.author))
+        await ctx.send(embed=embed, file=discord.File(path, 'image.jpg'))
+    else:
+        await ctx.send(embed=embed)
 
 @bot.command(name='help')
 async def help(ctx):
-    embed=discord.Embed(title="Paneka-Help!", description="Shows available commands and their functions", color=0xf58300)
-    embed.set_thumbnail(url="https://img.icons8.com/fluent/144/000000/get-help.png")
-    embed.add_field(name=":exclamation: standings-all [PL or SPA or SA]", value="   Detailed Standings, with team codes", inline=False)
-    embed.add_field(name=":exclamation: standings [PL or SPA or SA]", value="   Display Standings", inline=False)
-    embed.set_footer(text='Requested by ' + str(ctx.author))
-    await ctx.send(embed=embed)
+    helpEmbed = bot_commands.getHelpEmbed(ctx)
+    await ctx.send(embed=helpEmbed)
 
 bot.run(TOKEN)
