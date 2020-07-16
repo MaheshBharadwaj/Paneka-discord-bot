@@ -187,22 +187,22 @@ def fetchJSON(code, resource):
                          'file': f"cache/TEAM-{code}.json"}\
                     }
 
-        filePath = extension[resource]['file']
+        # filePath = extension[resource]['file']
 
-        if os.path.exists(filePath):
-            #Cache hit
-            print(f'Entry for {code} found in Cache :D')
+        # if os.path.exists(filePath):
+        #     #Cache hit
+        #     print(f'Entry for {code} found in Cache :D')
 
-            with open(filePath, 'r') as fin:
-                obj = json.load(fin)
-        else:
+        #     with open(filePath, 'r') as fin:
+        #         obj = json.load(fin)
+        # else:
             #Cache Miss
-            api_url = url + extension[resource]['api']
-            r = requests.get(api_url, headers=headers)
-            obj = r.json()
+        api_url = url + extension[resource]['api']
+        r = requests.get(api_url, headers=headers)
+        obj = r.json()
 
-            with open(extension[resource]['file'], 'w') as fout:
-                json.dump(obj, fout, indent=4)
+            # with open(extension[resource]['file'], 'w') as fout:
+            #     json.dump(obj, fout, indent=4)
 
         return obj    
 
