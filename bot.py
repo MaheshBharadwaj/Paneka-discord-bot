@@ -20,11 +20,6 @@ async def on_ready():
     print("Bot Running!")
 
 
-@bot.event
-async def on_command_error(ctx, error):
-    helpEmbed = bot_commands.getHelpEmbed(ctx)
-    await ctx.send('Invalid Command!\nPlease refer below for commands!', embed=helpEmbed)
-
 @bot.command(name='99', help='Responds with a random quote from Brooklyn 99')
 async def nine_nine(ctx):
     brooklyn_99_quotes = [
