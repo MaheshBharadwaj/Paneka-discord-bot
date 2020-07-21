@@ -80,7 +80,21 @@ Limit restricts the number of fixtures displayed and is by default 5
  - Add the bot to your guild(server) by inviting it using the OAuth2 link present in the developer application window
  - The bot is now ready :D
  
- 
+ # League Codes
+ All the supported leagues and their codes are listed below
+
+| League | Code |
+| :----- | :--: |
+| **Bundesliga**<br>Germany | `BL` |
+| **Brazillian Serie A**<br>Brazil | `BSA` |
+| **English Championship**<br>England | `ECL` |
+| **Eredivisie**<br>Netherlands | `ERD` |
+| **Ligue One**<br>France | `FL1` |
+| **Premier League**<br>England | `PL` |
+| **Primeira Liga**<br>Porugal | `PPL` |
+| **La Liga**<br>Spain| `SPA` |
+
+
  ## Credits: 
  Logo Courtesy:
  Icons made by [Freepik](https://www.flaticon.com/authors/freepik) from [Flaticon](https://www.flaticon.com/)

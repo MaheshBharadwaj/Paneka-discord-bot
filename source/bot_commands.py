@@ -117,6 +117,7 @@ def getLeagueCodes(title="League Codes"):
     embed.add_field(name=':three: Serie A', value = 'SA' + "\n\u200b", inline=False)
     embed.add_field(name=':four: Bundesliga', value = 'BA' + "\n\u200b", inline=True)
     embed.add_field(name=':five:Ligue 1', value = 'FL1', inline=False)
+    embed.add_field(name='For more leagues', value= 'click [Here](https://github.com/MaheshBharadwaj/paneka/blob/master/README.md/#league-codes)')
     return embed
 
 def getTeamCodes(title="Team Codes"):
@@ -175,7 +176,7 @@ def getHelpEmbed(ctx):
     embed.add_field(name = ":two: standings [league code]", value = "Display Standings", inline=False)
     embed.add_field(name = ":three: fixtures ['league' or 'team'] [code] [limit (default: :five: )]", value = "Displays Fixtures", inline=False)
     embed.add_field(name = ":four: league-codes", value = "Displays Leagues and their Respective Codes", inline=False)
-    embed.add_field(name = ":five: team-codes", value = "Displayes Teams and their Respectice Codes", inline=False)
+    embed.add_field(name = ":five: team-codes", value = "Displayes Teams and their Respective Codes", inline=False)
     embed.set_footer(text='Requested By: ' + str(ctx.author))
 
     return embed
