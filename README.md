@@ -70,10 +70,19 @@ Limit restricts the number of fixtures displayed and is by default 5
  - Become a discord developer and create a new bot
  - Copy the token under `Build-A-Bot`
  - Store the key in `.env` as follows:<br>
-   `DISCORD_KEY=The code`<br>
+   `DISCORD_KEY=The Bot code`<br>
+   **NOTE: NO spaces around the '='**
+ - Get a **free** API key from [here](https://www.football-data.org/)
+ - Store this key in `.env` on a new line as:<br>
+   `API_KEY=The API code`<br>
    **NOTE: NO spaces around the '='**
  - `python3 bot.py` to run the bot
  - Add the bot to your guild(server) by inviting it using the OAuth2 link present in the developer application window
  - The bot is now ready :D
+ 
+ 
+ ## Credits: 
+ Logo Courtesy:
+ Icons made by [Freepik](https://www.flaticon.com/authors/freepik) from [Flaticon](https://www.flaticon.com/)
  
  
