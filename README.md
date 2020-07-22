@@ -2,7 +2,8 @@
 <p align = "center"><img src = "https://maheshk23.imfast.io/Paneka/logo.png"><br><br>
 <img src = "https://img.shields.io/github/languages/top/MaheshBharadwaj/paneka?logo=python&logoColor=%23dddddd&style=flat-square">
 <img src = "https://img.shields.io/github/v/tag/MaheshBharadwaj/paneka?color=%2349a305&label=Release&logo=github&logoColor=%23dddddd&style=flat-square">
-<img alt="GitHub contributors" src="https://img.shields.io/github/contributors/MaheshBharadwaj/paneka?color=%2349a305&label=Contributors&logo=GitHub&style=flat-square">
+<img alt="GitHub contributors" src="https://img.shields.io/github/contributors/MaheshBharadwaj/paneka?color=%2349a305&label=Contributors&logo=GitHub&style=flat-square"><br><br>
+<h2 align="center">Click <a href = "https://discord.com/api/oauth2/authorize?client_id=731544990446256198&permissions=60416&scope=bot">Here</a> To invite the bot to your server!</h2>
 </p>
 <hr>
 
