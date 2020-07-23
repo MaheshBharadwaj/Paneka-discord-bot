@@ -2,13 +2,16 @@
 <p align = "center"><img src = "https://maheshk23.imfast.io/Paneka/logo.png"><br><br>
 <img src = "https://img.shields.io/github/languages/top/MaheshBharadwaj/paneka?logo=python&logoColor=%23dddddd&style=flat-square">
 <img src = "https://img.shields.io/github/v/tag/MaheshBharadwaj/paneka?color=%2349a305&label=Release&logo=github&logoColor=%23dddddd&style=flat-square">
-<img alt="GitHub contributors" src="https://img.shields.io/github/contributors/MaheshBharadwaj/paneka?color=%2349a305&label=Contributors&logo=GitHub&style=flat-square"><br><br>
+<img alt="GitHub contributors" src="https://img.shields.io/github/contributors/MaheshBharadwaj/paneka?color=%2349a305&label=Contributors&logo=GitHub&style=flat-square">
+<img alt="Hits" src="http://hits.dwyl.com/MaheshBharadwaj/Paneka-discord-bot.svg"><br><br>
 <h2 align="center">Click <a href = "https://discord.com/api/oauth2/authorize?client_id=731544990446256198&permissions=60416&scope=bot">Here</a> To invite the bot to your server!</h2>
 </p>
 <hr>
 
 # Introduction
 Football bot for discord written in `python` using [discord.py](https://pypi.org/project/discord.py/) and currenty hosted on [heroku](https://heroku.com).
+
+The API used for fetching football data is [football-data.org](https://football-data.org)'s free tier and hence we have a rate limit of **10 Requests / Min** and **12** Competitions.
 
 # Commands
 ### 1. Help
@@ -58,6 +61,16 @@ Limit restricts the number of fixtures displayed and is by default 5
 <img alt="Team Fixtures image" src="https://maheshk23.imfast.io/Paneka/team-fixtures.png">
 </p>
 
+### 5. Invite
+Sends the URL to invite bot into servers as a _Direct Message_
+
+**usage:** `!invite`
+
+<p align="center">
+<img alt="Invite Command image" src="https://maheshk23.imfast.io/Paneka/invite-command.png">
+</p>
+
+
 
 # How to run locally:
  - fork and clone repository
@@ -72,11 +85,11 @@ Limit restricts the number of fixtures displayed and is by default 5
  - Copy the token under `Build-A-Bot`
  - Store the key in `.env` as follows:<br>
    `DISCORD_KEY=The Bot code`<br>
-   **NOTE: NO spaces around the '='**
- - Get a **free** API key from [here](https://www.football-data.org/)
+   **NOTE:** NO _spaces_ around the `'='`
+ - Get a **free** football-data API key from [football-data.org](https://www.football-data.org/)
  - Store this key in `.env` on a new line as:<br>
    `API_KEY=The API code`<br>
-   **NOTE: NO spaces around the '='**
+   **NOTE:** NO _spaces_ around the `'='`
  - `python3 bot.py` to run the bot
  - Add the bot to your guild(server) by inviting it using the OAuth2 link present in the developer application window
  - The bot is now ready :D
@@ -93,6 +106,7 @@ Limit restricts the number of fixtures displayed and is by default 5
 | **Ligue One**<br>France | `FL1` |
 | **Premier League**<br>England | `PL` |
 | **Primeira Liga**<br>Porugal | `PPL` |
+| **Serie A**<br>Italy | `SA` |
 | **La Liga**<br>Spain| `SPA` |
 
 
