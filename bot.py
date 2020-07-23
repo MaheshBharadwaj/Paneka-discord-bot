@@ -18,6 +18,21 @@ bot.remove_command('help')
 @bot.event
 async def on_ready():
     print("Bot Running!")
+    await bot.change_presence(
+        activity = discord.Activity(
+            type = discord.ActivityType.listening,
+            name = "commands on " + str(len(bot.guilds)) + " server(s)")
+        )
+
+
+@bot.event
+async def on_guild_join(guild):
+    for channel in guild.text_channels:
+        if channel.permissions_for(guild.me).send_messages:
+            helpEmbed = bot_commands.getHelpEmbed()
+            await channel.send('Hey There! Just got added to this channel!\
+                \nBasic commands are listed below :)', embed=helpEmbed)
+            break
 
 
 @bot.command(name='99', help='Responds with a random quote from Brooklyn 99')
@@ -25,10 +40,11 @@ async def nine_nine(ctx):
     brooklyn_99_quotes = [
         'I\'m the human form of the 💯 emoji.',
         'Bingpot!',
-        (
-            'Cool. Cool cool cool cool cool cool cool, '
-            'no doubt no doubt no doubt no doubt.'
-        ),
+        'Cool. Cool cool cool cool cool cool cool,\
+        \nno doubt no doubt no doubt no doubt.',
+        'If I die, turn my tweets into a book',
+        'Captain Wuntch. Good to see you. But if you’re here, who’s guarding Hades?',
+        'Anyone over the age of six celebrating a birthday should go to hell.'
     ]
 
     response = random.choice(brooklyn_99_quotes)
@@ -56,10 +72,10 @@ async def standings(ctx, arg=''):
 @bot.group(name='fixtures')
 async def fixtures(ctx):
     if ctx.invoked_subcommand is None:
-        helpEmbed = bot_commands.getHelpEmbed(ctx)
+        helpEmbed = bot_commands.getHelpEmbed()
         await ctx.send('Invalid Usage!\nLook at usage here:', embed=helpEmbed)
 
-@fixtures.command(name='league')
+@fixtures.command(name='league', aliases=['l'])
 async def league(ctx, code='', limit=5):
     fixturesEmbed = bot_commands.getFixtures(code, limit,mode='league')
     path = fetchImage(code)
@@ -70,7 +86,7 @@ async def league(ctx, code='', limit=5):
     else:
         await ctx.send(embed=fixturesEmbed)
 
-@fixtures.command(name='team')
+@fixtures.command(name='team', aliases=['t'])
 async def team(ctx, code='', limit=5):
     fixturesEmbed = bot_commands.getFixtures(code, limit, mode='team')
     await ctx.send(embed=fixturesEmbed)
@@ -87,9 +103,16 @@ async def teamCodes(ctx):
     teamCodesEmbed = bot_commands.getTeamCodes()
     await ctx.send(embed=teamCodesEmbed)
 
+@bot.command(name='invite')
+async def invite(ctx):
+    inviteEmbed = bot_commands.getInviteEmbed(ctx)
+    await ctx.author.send(embed=inviteEmbed)
+    await ctx.send(f'The invite link has been sent you DM {ctx.author.mention}')
+
 @bot.command(name='help')
 async def help(ctx):
     helpEmbed = bot_commands.getHelpEmbed(ctx)
     await ctx.send(embed=helpEmbed)
+
 
 bot.run(TOKEN)
