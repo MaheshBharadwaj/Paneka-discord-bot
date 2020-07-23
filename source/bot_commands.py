@@ -152,7 +152,34 @@ def getTeamCodes(title="Team Codes"):
     embed.add_field(name='Manche$ter City', value = 'MCFC', inline=True)
     return embed
 
-def getHelpEmbed(ctx):
+def getInviteEmbed(ctx):
+    """
+    Generates Invite embed to invite bot
+
+    Parameters:
+    -----------
+    ctx: discord.Context
+        Context data passed by discord when a command is invoked
+
+    Returns:
+    --------
+    discord.Embed 
+        Showing invite URL for the bot
+
+    """
+    inviteEmbed = discord.Embed(
+        title = 'Invite link!',
+        description = 'URL for inviting bot to your servers'
+    )
+
+    inviteEmbed.add_field(
+        name = ":warning:  You need to be an admin to add bots :slight_smile:",
+        value = "https://discord.com/api/oauth2/authorize?client_id=731544990446256198&permissions=60416&scope=bot"
+    )
+
+    return inviteEmbed
+
+def getHelpEmbed(ctx=None):
     """
     Generates the 'Help' embed when requested
 
@@ -169,7 +196,8 @@ def getHelpEmbed(ctx):
     """
     embed = discord.Embed(
                 title="Paneka-Help!",
-                description="Shows available commands and their functions",
+                description="Shows available commands and their functions\
+                \nNOTE: The command prefix is :exclamation:",
                 color=0xf58300 )
     embed.set_thumbnail(url = "https://img.icons8.com/fluent/144/000000/get-help.png")
     embed.add_field(name = ":one: standings-all [league code]", value = "Detailed Standings, with team codes", inline=False)
@@ -177,7 +205,10 @@ def getHelpEmbed(ctx):
     embed.add_field(name = ":three: fixtures ['league' or 'team'] [code] [limit (default: :five: )]", value = "Displays Fixtures", inline=False)
     embed.add_field(name = ":four: league-codes", value = "Displays Leagues and their Respective Codes", inline=False)
     embed.add_field(name = ":five: team-codes", value = "Displayes Teams and their Respective Codes", inline=False)
-    embed.set_footer(text='Requested By: ' + str(ctx.author))
+    embed.add_field(name = ":six: invite", value = "Invite bot to your servers!" ,inline=False)
+    embed.add_field(name = "\u200b", value = ":computer: Link to GitHub Repository: [Click Here](https://github.com/MaheshBharadwaj/paneka)", inline=False)
+    if ctx is not None:
+        embed.set_footer(text='Requested By: ' + str(ctx.author))
 
     return embed
 
