@@ -12,17 +12,18 @@ from source.utils import fetchImage
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 
-bot = commands.Bot(command_prefix='!')
+bot = commands.Bot(command_prefix='.')
 bot.remove_command('help')
+
 
 @bot.event
 async def on_ready():
     print("Bot Running!")
     await bot.change_presence(
-        activity = discord.Activity(
-            type = discord.ActivityType.listening,
-            name = "commands on " + str(len(bot.guilds)) + " server(s)")
-        )
+        activity=discord.Activity(
+            type=discord.ActivityType.listening,
+            name=".help on " + str(len(bot.guilds)) + " server(s)")
+    )
 
 
 @bot.event
@@ -50,22 +51,37 @@ async def nine_nine(ctx):
     response = random.choice(brooklyn_99_quotes)
     await ctx.send(response)
 
+# Requires admin
+@bot.command(name='update')
+async def update(ctx, message = None):
+    if ctx.message.author.id == 694128831291981844:
+        for guild in bot.guilds:
+            for channel in guild.text_channels:
+                if channel.permissions_for(guild.me).send_messages:
+                    helpEmbed = bot_commands.getHelpEmbed()
+                    await channel.send(message, embed=helpEmbed)
+                    break
+            
+
 @bot.command(name='standings-all', help='Displays standings with all details')
 async def standingsAll(ctx, arg=''):
-    text = bot_commands.getStandings(arg, mode='all')
+    text = bot_commands.getStandings(arg.upper(), mode='all')
     if text is not None:
         await ctx.send(text)
     else:
-        leagueCodeEmbed = bot_commands.getLeagueCodes('Invalid League Code Entered!')
+        leagueCodeEmbed = bot_commands.getLeagueCodes(
+            'Invalid League Code Entered!')
         await ctx.send(embed=leagueCodeEmbed)
+
 
 @bot.command(name='standings', help='Display Standings with only Matches played & points')
 async def standings(ctx, arg=''):
-    text = bot_commands.getStandings(arg, mode='long')
+    text = bot_commands.getStandings(arg.upper(), mode='long')
     if text is not None:
         await ctx.send(text)
     else:
-        leagueCodeEmbed = bot_commands.getLeagueCodes('Invalid League Code Entered!')
+        leagueCodeEmbed = bot_commands.getLeagueCodes(
+            'Invalid League Code Entered!')
         await ctx.send(embed=leagueCodeEmbed)
 
 
@@ -75,39 +91,62 @@ async def fixtures(ctx):
         helpEmbed = bot_commands.getHelpEmbed()
         await ctx.send('Invalid Usage!\nLook at usage here:', embed=helpEmbed)
 
+
 @fixtures.command(name='league', aliases=['l'])
 async def league(ctx, code='', limit=5):
-    fixturesEmbed = bot_commands.getFixtures(code, limit,mode='league')
+    fixturesEmbed = bot_commands.getFixtures(
+        code.upper(), limit, mode='league')
+    fixturesEmbed.set_footer(text='Requested By: ' + str(ctx.author))
+
     path = fetchImage(code)
     if path is not None:
         fixturesEmbed.set_thumbnail(url='attachment://image.jpg')
-        fixturesEmbed.set_footer(text='Requested By: ' + str(ctx.author))
         await ctx.send(embed=fixturesEmbed, file=discord.File(path, 'image.jpg'))
     else:
         await ctx.send(embed=fixturesEmbed)
 
+
 @fixtures.command(name='team', aliases=['t'])
 async def team(ctx, code='', limit=5):
-    fixturesEmbed = bot_commands.getFixtures(code, limit, mode='team')
+    fixturesEmbed = bot_commands.getFixtures(code.upper(), limit, mode='team')
+    fixturesEmbed.set_footer(text='Requested By: ' + str(ctx.author))
+    
     await ctx.send(embed=fixturesEmbed)
+
+
+@bot.command(name='matches', aliases=['live', 'm'])
+async def matches(ctx, code='', limit=5):
+    liveMatchesEmbed = bot_commands.getMatches(code.upper(), limit)
+    liveMatchesEmbed.set_footer(text='Requested By: ' + str(ctx.author))
+    path = fetchImage(code)
+    if path is not None:
+        liveMatchesEmbed.set_thumbnail(url='attachment://image.jpg')
+        await ctx.send(embed=liveMatchesEmbed, file=discord.File(path, 'image.jpg'))
+    else:
+        await ctx.send(embed=liveMatchesEmbed)
+
 
 
 @bot.command(name='league-codes')
 async def leagueCodes(ctx):
     leagueCodesEmbed = bot_commands.getLeagueCodes()
+    leagueCodesEmbed.set_footer(text='Requested By: ' + str(ctx.author))
     await ctx.send(embed=leagueCodesEmbed)
 
 
 @bot.command(name='team-codes')
 async def teamCodes(ctx):
     teamCodesEmbed = bot_commands.getTeamCodes()
+    teamCodesEmbed.set_footer(text='Requested By: ' + str(ctx.author))
     await ctx.send(embed=teamCodesEmbed)
+
 
 @bot.command(name='invite')
 async def invite(ctx):
     inviteEmbed = bot_commands.getInviteEmbed(ctx)
     await ctx.author.send(embed=inviteEmbed)
-    await ctx.send(f'The invite link has been sent to your DM {ctx.author.mention}')
+    await ctx.send(f'The invite link has been sent to your DM {ctx.author.mention} :D')
+
 
 @bot.command(name='help')
 async def help(ctx):
