@@ -201,14 +201,14 @@ def putMatches(obj, code, limit, mode):
             homeTeamScore = match['score']['fullTime']['homeTeam']
             homeTeamScore = 0 if homeTeamScore is None else homeTeamScore
             awayTeamScore = match['score']['fullTime']['awayTeam']
-            awayTeamScore = 0 if awayTeamScore is None else homeTeamScore
+            awayTeamScore = 0 if awayTeamScore is None else awayTeamScore
 
 
             status = ''
             if homeTeamScore == awayTeamScore:
                 status = f"**Draw {homeTeamScore} - {awayTeamScore}**"
             else:
-                leading = match['score']['winning']
+                leading = match['score']['winner']
                 if leading == 'AWAY_TEAM':
                     status = f"**{awayTeam} is currently leading by {awayTeamScore} goals to {homeTeamScore} goals**"
                 else:
