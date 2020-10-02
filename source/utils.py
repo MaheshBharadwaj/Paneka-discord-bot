@@ -190,11 +190,7 @@ def putMatches(obj, code, limit, mode):
         for i, match in enumerate(obj['matches']):
             if i > limit - 1:
                 break
-            # matchTime = dt.datetime.strptime(
-            #     match['utcDate'][:-1], '%Y-%m-%dt%H:%M:%S')
 
-            # # Converting to IST from UTC
-            # matchTime += dt.timedelta(hours=5, minutes=30)
             homeTeam = match['homeTeam']['name']
             awayTeam = match['awayTeam']['name']
 
@@ -202,7 +198,6 @@ def putMatches(obj, code, limit, mode):
             homeTeamScore = 0 if homeTeamScore is None else homeTeamScore
             awayTeamScore = match['score']['fullTime']['awayTeam']
             awayTeamScore = 0 if awayTeamScore is None else awayTeamScore
-
 
             status = ''
             if homeTeamScore == awayTeamScore:

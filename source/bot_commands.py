@@ -45,7 +45,7 @@ def getStandings(code, mode='long'):
         return None
 
 
-def getFixtures(code, limit: int, mode):
+def getFixtures(code, limit: int):
     """
     Displays the fixtures in the requested league / team as an embed
     Fetches fixtures from JSON file and renders embed for it,
@@ -57,9 +57,7 @@ def getFixtures(code, limit: int, mode):
         The ID of the league or team for which fixtures are required
     limit: int, optional
         Number of fixtures to display (default value of 5)
-    mode: str ['league' or 'team']
-        Whether the fixtures of a league or a team are to be rendered
-
+  
     Returns:
     --------
     discord.Embed
@@ -71,11 +69,15 @@ def getFixtures(code, limit: int, mode):
         if limit < 0:
             raise InvalidLimitException
 
-        if (mode == 'league' and code not in LEAGUE_CODE):
-            raise InvalidLeagueCodeException
-
-        if (mode == 'team' and code not in TEAM_ID):
-            raise InvalidTeamCodeException
+        mode = 'league'
+        if code not in LEAGUE_CODE:
+            if code in TEAM_ID:
+                mode = 'team'
+            else:
+                return discord.Embed(title='Please enter a valid code!',
+                                     description='Please Refer to **.team-codes** for team codes\
+                        \nAnd **.league-codes** for league-codes',
+                                     color=0xf58300)
 
         obj = fetchJSON(code, 'fixtures')
         return putFixtures(obj, code, limit, mode)
@@ -84,12 +86,6 @@ def getFixtures(code, limit: int, mode):
         return discord.Embed(title='Limit must be greater than :zero:',
                              description="Enter a valid limit :smile:",
                              color=0xf58300)
-
-    except InvalidLeagueCodeException:
-        return getLeagueCodes("Invalid League Code!")
-
-    except InvalidTeamCodeException:
-        return getTeamCodes("Invalid Team Code!")
 
 
 def getMatches(code, limit: int):
@@ -103,8 +99,8 @@ def getMatches(code, limit: int):
                 mode = 'team'
             else:
                 return discord.Embed(title='Please enter a valid code!',
-                                     description='Please Refer to `.team-codes` for team codes\
-                        \nAnd `.league-codes` for league-codes',
+                                     description='Please Refer to **.team-codes** for team codes\
+                        \nAnd **.league-codes** for league-codes',
                                      color=0xf58300)
 
         obj = fetchJSON(code, 'live')
@@ -236,20 +232,20 @@ def getHelpEmbed(ctx=None):
         color=0xf58300)
     embed.set_thumbnail(
         url="https://img.icons8.com/fluent/144/000000/get-help.png")
-    embed.add_field(name=":one: .standings-all [league code]",
-                    value="Detailed Standings, with team codes", inline=False)
-    embed.add_field(
-        name=":two: .standings [league code]", value="Display Standings", inline=False)
-    embed.add_field(
-        name=":three: .fixtures ['league' or 'team'] [code] [limit (default: :five: )]", value="Displays Fixtures", inline=False)
+    embed.add_field(name=":one: .standings-all [league code]", inline=False,\
+                    value="Detailed Standings, with team codes")
+    embed.add_field(name=":two: .standings [league code]", inline=False,\
+                    value="Display Standings")
+    embed.add_field(name=":three: .fixtures [league code or team code] [limit (default: :five: )]", inline=False,\
+                    value="Displays fixtures of matches of the league or team",)
     embed.add_field(name=":four: .live [league code or team code] [limit (default:  :five:  )]", inline=False,\
                     value='Display Live Matches of the league or team')
-    embed.add_field(name=":five: .league-codes",
-                    value="Displays Leagues and their Respective Codes", inline=False)
-    embed.add_field(name=":six: .team-codes",
-                    value="Displayes Teams and their Respective Codes", inline=False)
-    embed.add_field(name=":seven: .invite",
-                    value="Invite bot to your servers!", inline=False)
+    embed.add_field(name=":five: .league-codes", inline=False,\
+                    value="Displays Leagues and their Respective Codes")
+    embed.add_field(name=":six: .team-codes", inline=False,\
+                    value="Displayes Teams and their Respective Codes")
+    embed.add_field(name=":seven: .invite", inline=False,\
+                    value="Invite bot to your servers!")
     embed.add_field(
         name="\u200b", value=":computer: Link to GitHub Repository: [Click Here](https://github.com/MaheshBharadwaj/paneka)", inline=False)
     if ctx is not None:

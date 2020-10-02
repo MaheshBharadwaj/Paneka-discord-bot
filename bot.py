@@ -85,47 +85,29 @@ async def standings(ctx, arg=''):
         await ctx.send(embed=leagueCodeEmbed)
 
 
-@bot.group(name='fixtures')
-async def fixtures(ctx):
-    if ctx.invoked_subcommand is None:
-        helpEmbed = bot_commands.getHelpEmbed()
-        await ctx.send('Invalid Usage!\nLook at usage here:', embed=helpEmbed)
-
-
-@fixtures.command(name='league', aliases=['l'])
-async def league(ctx, code='', limit=5):
-    fixturesEmbed = bot_commands.getFixtures(
-        code.upper(), limit, mode='league')
+@bot.command(name='fixtures', alias=['matches', 'm', 'f'])
+async def fixtures(ctx, code = '', limit=5):
+    fixturesEmbed = bot_commands.getFixtures(code.upper(), limit)
     fixturesEmbed.set_footer(text='Requested By: ' + str(ctx.author))
 
-    path = fetchImage(code)
+    path = fetchImage(code.upper())
     if path is not None:
         fixturesEmbed.set_thumbnail(url='attachment://image.jpg')
         await ctx.send(embed=fixturesEmbed, file=discord.File(path, 'image.jpg'))
     else:
         await ctx.send(embed=fixturesEmbed)
 
-
-@fixtures.command(name='team', aliases=['t'])
-async def team(ctx, code='', limit=5):
-    fixturesEmbed = bot_commands.getFixtures(code.upper(), limit, mode='team')
-    fixturesEmbed.set_footer(text='Requested By: ' + str(ctx.author))
-    
-    await ctx.send(embed=fixturesEmbed)
-
-
-@bot.command(name='matches', aliases=['live', 'm'])
+@bot.command(name='live', aliases=['l'])
 async def matches(ctx, code='', limit=5):
     liveMatchesEmbed = bot_commands.getMatches(code.upper(), limit)
     liveMatchesEmbed.set_footer(text='Requested By: ' + str(ctx.author))
-    path = fetchImage(code)
+  
+    path = fetchImage(code.upper())
     if path is not None:
         liveMatchesEmbed.set_thumbnail(url='attachment://image.jpg')
         await ctx.send(embed=liveMatchesEmbed, file=discord.File(path, 'image.jpg'))
     else:
         await ctx.send(embed=liveMatchesEmbed)
-
-
 
 @bot.command(name='league-codes')
 async def leagueCodes(ctx):
@@ -133,20 +115,17 @@ async def leagueCodes(ctx):
     leagueCodesEmbed.set_footer(text='Requested By: ' + str(ctx.author))
     await ctx.send(embed=leagueCodesEmbed)
 
-
 @bot.command(name='team-codes')
 async def teamCodes(ctx):
     teamCodesEmbed = bot_commands.getTeamCodes()
     teamCodesEmbed.set_footer(text='Requested By: ' + str(ctx.author))
     await ctx.send(embed=teamCodesEmbed)
 
-
 @bot.command(name='invite')
 async def invite(ctx):
     inviteEmbed = bot_commands.getInviteEmbed(ctx)
     await ctx.author.send(embed=inviteEmbed)
     await ctx.send(f'The invite link has been sent to your DM {ctx.author.mention} :D')
-
 
 @bot.command(name='help')
 async def help(ctx):
