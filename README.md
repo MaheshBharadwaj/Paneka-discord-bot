@@ -17,57 +17,67 @@ The API used for fetching football data is [football-data.org](https://football-
 ### 1. Help
 Displays the commands available for usage
 
-**usage:** `!help`
+**usage:** `.help`
 
 <p align="center">
-<img alt="help image" src="https://maheshk23.imfast.io/Paneka/help-command.png">
+<img alt="help image" src="https://maheshk23.imfast.io/Paneka/help-command-v2.png">
 </p>
 
 ### 2. Standings All
 Generates a more _detailed_ table showing goals for, against, matches won and lost
 
-**usage:** `!standings-all [league code]`
+**usage:** `.standings-all [league code]`
 
 <p align="center">
-<img alt="standings-all image" src="https://maheshk23.imfast.io/Paneka/standings-all.png">
+<img alt="standings-all image" src="https://maheshk23.imfast.io/Paneka/standings-all-v2.png">
 </p>
 
 ### 3. Standings
 Generates the _current standings_ in the requested league.
 
-**usage:** `!standings [league code]`
+**usage:** `.standings [league code]`
 
 <p align="center">
-<img alt="standings image" src="https://maheshk23.imfast.io/Paneka/standings.png">
+<img alt="standings image" src="https://maheshk23.imfast.io/Paneka/standings-v2.png">
 </p>
 
 ### 4. Fixtures
-Displays the next matches scheduled for the team or league as the case maybe.
+Displays the next matches scheduled for the team or league requested.
 
-
-**usage:** `!fixtures ['league' | 'team'][league code | team code] [limit: default 5]`
+**usage:** `.fixtures [league code | team code] [limit: default 5]`
 
 Limit restricts the number of fixtures displayed and is by default 5
 
 #### 4.1 League Fixtures
 
 <p align="center">
-<img alt="League Fixtures image" src="https://maheshk23.imfast.io/Paneka/league-fixtures.png">
+<img alt="League Fixtures image" src="https://maheshk23.imfast.io/Paneka/league-fixtures-v2.png">
 </p>
 
 #### 4.2 Team Fixtures
 
 <p align="center">
-<img alt="Team Fixtures image" src="https://maheshk23.imfast.io/Paneka/team-fixtures.png">
+<img alt="Team Fixtures image" src="https://maheshk23.imfast.io/Paneka/team-fixtures-v2.png">
 </p>
 
-### 5. Invite
-Sends the URL to invite bot into servers as a _Direct Message_
+### 5. Live Scores
+Displays the live scores of matches in league requested or team requested
 
-**usage:** `!invite`
+**usage:** `.live [league code | team code] [limit: default 5]`
+
+Limit restricts number of matches displayed and is by default 5
 
 <p align="center">
-<img alt="Invite Command image" src="https://maheshk23.imfast.io/Paneka/invite-command.png">
+<img alt="Team Fixtures image" src="https://maheshk23.imfast.io/Paneka/live-league-v2.png">
+</p>
+
+### 6. Invite
+Sends the URL to invite bot into servers as a _Direct Message_
+
+**usage:** `.invite`
+
+<p align="center">
+<img alt="Invite Command image" src="https://maheshk23.imfast.io/Paneka/invite-command-v2.png">
 </p>
 
 
@@ -84,7 +94,7 @@ Sends the URL to invite bot into servers as a _Direct Message_
  - Become a discord developer and create a new bot
  - Copy the token under `Build-A-Bot`
  - Store the key in `.env` as follows:<br>
-   `DISCORD_KEY=The Bot code`<br>
+   `DISCORD_TOKEN=The Bot code`<br>
    **NOTE:** NO _spaces_ around the `'='`
  - Get a **free** football-data API key from [football-data.org](https://www.football-data.org/)
  - Store this key in `.env` on a new line as:<br>
