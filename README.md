@@ -15,9 +15,9 @@ The API used for fetching football data is [football-data.org](https://football-
 
 # Commands
 ### 1. Help
-Displays the commands available for usage
+Displays the commands available for use
 
-**usage:** `!help`
+**usage:** `.help`
 
 <p align="center">
 <img alt="help image" src="https://maheshk23.imfast.io/Paneka/help-command.png">
@@ -26,7 +26,7 @@ Displays the commands available for usage
 ### 2. Standings All
 Generates a more _detailed_ table showing goals for, against, matches won and lost
 
-**usage:** `!standings-all [league code]`
+**usage:** `.standings-all [league code]`
 
 <p align="center">
 <img alt="standings-all image" src="https://maheshk23.imfast.io/Paneka/standings-all.png">
@@ -35,17 +35,17 @@ Generates a more _detailed_ table showing goals for, against, matches won and lo
 ### 3. Standings
 Generates the _current standings_ in the requested league.
 
-**usage:** `!standings [league code]`
+**usage:** `.standings [league code]`
 
 <p align="center">
 <img alt="standings image" src="https://maheshk23.imfast.io/Paneka/standings.png">
 </p>
 
 ### 4. Fixtures
-Displays the next matches scheduled for the team or league as the case maybe.
+Displays the upcoming matches scheduled for the team or league as the case may be.
 
 
-**usage:** `!fixtures ['league' | 'team'][league code | team code] [limit: default 5]`
+**usage:** `.fixtures ['league' | 'team'][league code | team code] [limit: default 5]`
 
 Limit restricts the number of fixtures displayed and is by default 5
 
@@ -64,7 +64,7 @@ Limit restricts the number of fixtures displayed and is by default 5
 ### 5. Invite
 Sends the URL to invite bot into servers as a _Direct Message_
 
-**usage:** `!invite`
+**usage:** `.invite`
 
 <p align="center">
 <img alt="Invite Command image" src="https://maheshk23.imfast.io/Paneka/invite-command.png">
@@ -84,7 +84,7 @@ Sends the URL to invite bot into servers as a _Direct Message_
  - Become a discord developer and create a new bot
  - Copy the token under `Build-A-Bot`
  - Store the key in `.env` as follows:<br>
-   `DISCORD_KEY=The Bot code`<br>
+   `DISCORD_TOKEN=The Bot code`<br>
    **NOTE:** NO _spaces_ around the `'='`
  - Get a **free** football-data API key from [football-data.org](https://www.football-data.org/)
  - Store this key in `.env` on a new line as:<br>
