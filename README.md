@@ -129,6 +129,7 @@ Sends the URL to invite bot into servers as a _Direct Message_
  - [Premier League](#premier-league)
  - [English Championship](#english-championship)
  - [Eredivisie](#eredivisie)
+ - [Mixed](#mixed)
  
  ## Bundesliga
 
