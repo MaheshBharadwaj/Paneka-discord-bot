@@ -134,7 +134,7 @@ Sends the URL to invite bot into servers as a _Direct Message_
 
 | Team | Codes |
 | :----- | :--: |
-| **FC Bayern M\u00fcnchen** | `BAY` |
+| **FC Bayern Mücnchen** | `BAY` |
 | **Hamburger SV** | `HSV` |
 | **C Augsburg** | `FCA` |
 | **Hertha BSC** | `BSC` |
@@ -147,27 +147,27 @@ Sends the URL to invite bot into servers as a _Direct Message_
 | **Werder Bremen** | `SVW` |
 | **FC Schalke 04** | `S04` |
 | **Borussia Dortmund** | `BVB` |
-| **Bor. M\u00f6nchengladbach** | `BMG` |
+| **Bor. Mönchengladbach** | `BMG` |
 | **VfL Wolfsburg** | `WOB` |
 | **Eintracht Frankfurt** | `SGE` |
 | **VfB Stuttgart** | `VFB` |
-| **1. FC K\u00f6ln** | `FCK` |
+| **1. FC Köln** | `FCK` |
 | **1. FC Kaiserslautern** | `KAI` |
 | **Eintracht Braunschweig** | `EBS` |
 | **SV Sandhausen** | `SVS` |
 | **SC Freiburg** | `SCF` |
-| **1. FC N\u00fcrnberg** | `FCN` |
+| **1. FC Nücrnberg** | `FCN` |
 | **FSV Frankfurt** | `FSV` |
 | **Red Bull Leipzig** | `RBL` |
-| **SpVgg Greuther F\u00fcrth** | `GRE` |
+| **SpVgg Greuther Fücrth** | `GRE` |
 | **Karlsruher SC** | `KAR` |
 | **1. FC Heidenheim 1846** | `HEI` |
-| **TSV 1860 M\u00fcnchen** | `1860` |
+| **TSV 1860 Mücnchen** | `1860` |
 | **SC Paderborn 07** | `PAD` |
 | **VfL Bochum** | `VFL` |
 | **FC St. Pauli** | `FCP` |
 | **1. FC Union Berlin** | `FCU` |
-| **Fortuna D\u00fcsseldorf** | `FOR` |
+| **Fortuna Dücsseldorf** | `FOR` |
 | **VfR Aalen** | `VFR` |
 
 
@@ -176,13 +176,13 @@ Sends the URL to invite bot into servers as a _Direct Message_
 | Team | Codes |
 | :----- | :--: |
 | **RC Deportivo La Coruna** | `LAC` |
-| **Real Sociedad de F\u00fatbol** | `RSS` |
+| **Real Sociedad de Füatbol** | `RSS` |
 | **RCD Espanyol** | `ESP` |
 | **Getafe CF** | `FCG` |
-| **Club Atl\u00e9tico de Madrid** | `ATM` |
+| **Club Atlético de Madrid** | `ATM` |
 | **Rayo Vallecano de Madrid** | `RAY` |
 | **Valencia CF** | `VAL` |
-| **M\u00e1laga CF** | `MAL` |
+| **Málaga CF** | `MAL` |
 | **Sevilla FC** | `SEV` |
 | **Athletic Club** | `BIL` |
 | **FC Barcelona** | `FCB` |
@@ -198,7 +198,7 @@ Sends the URL to invite bot into servers as a _Direct Message_
 | **SL Benfica** | `SLB` |
 | **Elche FC** | `CFE` |
 | **UD Almeria** | `UDA` |
-| **C\u00f3rdoba CF** | `CCF` |
+| **Córdoba CF** | `CCF` |
 
  ## Ligue One
 
@@ -207,10 +207,10 @@ Sends the URL to invite bot into servers as a _Direct Message_
 | **Paris Saint-Germain** | `PSG` |
 | **Olympique de Marseille** | `MAR` |
 | **Paris FC** | `PFC` |
-| **\u00c9vian Thonon Gaillard FC** | `EVA` |
+| **évian Thonon Gaillard FC** | `EVA` |
 | **FC Metz** | `FCM` |
 | **RC Lens** | `RCL` |
-| **Montpellier H\u00e9rault SC** | `MHSC` |
+| **Montpellier Hérault SC** | `MHSC` |
 | **OSC Lille** | `OSC` |
 | **SM Caen** | `SMC` |
 | **OGC Nice** | `NIC` |
@@ -221,7 +221,7 @@ Sends the URL to invite bot into servers as a _Direct Message_
 | **EA Guingamp** | `GUI` |
 | **Stade de Reims** | `REI` |
 | **Toulouse FC** | `TOU` |
-| **AS Saint-\u00c9tienne** | `ETI` |
+| **AS Saint-	Étienne** | `ETI` |
 | **Olympique Lyonnais** | `OLY` |
 | **FC Lorient** | `LOR` |
 
@@ -232,7 +232,7 @@ Sends the URL to invite bot into servers as a _Direct Message_
 | :----- | :--: |
 | **AS Roma** | `ROM` |
 | **Juventus Turin** | `JUVE` |
-| **US Citt\u00e1 di Palermo** | `PAL` |
+| **US Cittá di Palermo** | `PAL` |
 | **Genoa CFC** | `GEN` |
 | **US Sassuolo Calcio** | `SASS` |
 | **SSC Napoli** | `SSC` |
@@ -286,7 +286,7 @@ Sends the URL to invite bot into servers as a _Direct Message_
 
 | Team | Codes |
 | :----- | :--: |
-| **Malm\u00f6 FF** | `MFF` |
+| **Malmö FF** | `MFF` |
 | **FC Astana** | `ASTA` |
 | **Galatasaray SK** | `GSK` |
 | **CSKA Moscow** | `CSK` |
