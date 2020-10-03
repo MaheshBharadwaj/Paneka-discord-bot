@@ -15,7 +15,7 @@ The API used for fetching football data is [football-data.org](https://football-
 
 # Commands
 ### 1. Help
-Displays the commands available for usage
+Displays the commands available for use
 
 **usage:** `.help`
 

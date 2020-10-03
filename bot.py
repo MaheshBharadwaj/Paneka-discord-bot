@@ -9,7 +9,7 @@ from discord.ext import commands
 from dotenv import load_dotenv
 from source.utils import fetchImage
 
-load_dotenv()
+load_dotenv('.env')
 TOKEN = os.getenv('DISCORD_TOKEN')
 
 bot = commands.Bot(command_prefix='.')
@@ -131,6 +131,5 @@ async def invite(ctx):
 async def help(ctx):
     helpEmbed = bot_commands.getHelpEmbed(ctx)
     await ctx.send(embed=helpEmbed)
-
 
 bot.run(TOKEN)
