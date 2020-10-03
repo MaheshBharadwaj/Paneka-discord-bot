@@ -119,6 +119,187 @@ Sends the URL to invite bot into servers as a _Direct Message_
 | **Serie A**<br>Italy | `SA` |
 | **La Liga**<br>Spain| `SPA` |
 
+ # Team Codes
+ 
+ All team codes are listed according to leagues:
+ - [Bundesliga](#bundesliga)
+ - [La Liga](#la-liga)
+ - [Ligue One](#ligue-one)
+ - [Serie A](#serie-a)
+ - [Premier League](#premier-league)
+ - [English Championship](#english-championship)
+ - [Eredivisie](#eredivisie)
+ 
+ ## Bundesliga
+
+| Team | Codes |
+| :----- | :--: |
+| **FC Bayern M\u00fcnchen** | `BAY` |
+| **Hamburger SV** | `HSV` |
+| **C Augsburg** | `FCA` |
+| **Hertha BSC** | `BSC` |
+| **Bayer Leverkusen** | `B04` |
+| **TSG 1899 Hoffenheim** | `TSG` |
+| **SV Darmstadt 98** | `DAR` |
+| **Hannover 96** | `H96` |
+| **1. FSV Mainz 05** | `M05` |
+| **FC Ingolstadt 04** | `FCI` |
+| **Werder Bremen** | `SVW` |
+| **FC Schalke 04** | `S04` |
+| **Borussia Dortmund** | `BVB` |
+| **Bor. M\u00f6nchengladbach** | `BMG` |
+| **VfL Wolfsburg** | `WOB` |
+| **Eintracht Frankfurt** | `SGE` |
+| **VfB Stuttgart** | `VFB` |
+| **1. FC K\u00f6ln** | `FCK` |
+| **1. FC Kaiserslautern** | `KAI` |
+| **Eintracht Braunschweig** | `EBS` |
+| **SV Sandhausen** | `SVS` |
+| **SC Freiburg** | `SCF` |
+| **1. FC N\u00fcrnberg** | `FCN` |
+| **FSV Frankfurt** | `FSV` |
+| **Red Bull Leipzig** | `RBL` |
+| **SpVgg Greuther F\u00fcrth** | `GRE` |
+| **Karlsruher SC** | `KAR` |
+| **1. FC Heidenheim 1846** | `HEI` |
+| **TSV 1860 M\u00fcnchen** | `1860` |
+| **SC Paderborn 07** | `PAD` |
+| **VfL Bochum** | `VFL` |
+| **FC St. Pauli** | `FCP` |
+| **1. FC Union Berlin** | `FCU` |
+| **Fortuna D\u00fcsseldorf** | `FOR` |
+| **VfR Aalen** | `VFR` |
+
+
+ ## La Liga
+
+| Team | Codes |
+| :----- | :--: |
+| **RC Deportivo La Coruna** | `LAC` |
+| **Real Sociedad de F\u00fatbol** | `RSS` |
+| **RCD Espanyol** | `ESP` |
+| **Getafe CF** | `FCG` |
+| **Club Atl\u00e9tico de Madrid** | `ATM` |
+| **Rayo Vallecano de Madrid** | `RAY` |
+| **Valencia CF** | `VAL` |
+| **M\u00e1laga CF** | `MAL` |
+| **Sevilla FC** | `SEV` |
+| **Athletic Club** | `BIL` |
+| **FC Barcelona** | `FCB` |
+| **Real Madrid CF** | `MAD` |
+| **Levante UD** | `LUD` |
+| **RC Celta de Vigo** | `VIG` |
+| **Real Betis** | `BET` |
+| **Villarreal CF** | `VCF` |
+| **Granada CF** | `GCF` |
+| **SD Eibar** | `EIB` |
+| **Sporting CP** | `SCP` |
+| **FC Porto** | `FCP` |
+| **SL Benfica** | `SLB` |
+| **Elche FC** | `CFE` |
+| **UD Almeria** | `UDA` |
+| **C\u00f3rdoba CF** | `CCF` |
+
+ ## Ligue One
+
+| Team | Codes |
+| :----- | :--: |
+| **Paris Saint-Germain** | `PSG` |
+| **Olympique de Marseille** | `MAR` |
+| **Paris FC** | `PFC` |
+| **\u00c9vian Thonon Gaillard FC** | `EVA` |
+| **FC Metz** | `FCM` |
+| **RC Lens** | `RCL` |
+| **Montpellier H\u00e9rault SC** | `MHSC` |
+| **OSC Lille** | `OSC` |
+| **SM Caen** | `SMC` |
+| **OGC Nice** | `NIC` |
+| **AS Monaco FC** | `MON` |
+| **Stade Rennais FC** | `REN` |
+| **FC Girondins de Bordeaux** | `BOR` |
+| **FC Nantes** | `NAN` |
+| **EA Guingamp** | `GUI` |
+| **Stade de Reims** | `REI` |
+| **Toulouse FC** | `TOU` |
+| **AS Saint-\u00c9tienne** | `ETI` |
+| **Olympique Lyonnais** | `OLY` |
+| **FC Lorient** | `LOR` |
+
+
+ ## Serie A
+
+| Team | Codes |
+| :----- | :--: |
+| **AS Roma** | `ROM` |
+| **Juventus Turin** | `JUVE` |
+| **US Citt\u00e1 di Palermo** | `PAL` |
+| **Genoa CFC** | `GEN` |
+| **US Sassuolo Calcio** | `SASS` |
+| **SSC Napoli** | `SSC` |
+| **SS Lazio** | `LAZ` |
+| **FC Internazionale Milano** | `INT` |
+| **Torino FC** | `FCT` |
+| **ACF Fiorentina** | `FIO` |
+| **AC Milan** | `ACM` |
+| **Empoli FC** | `EMP` |
+
+
+ ## Premier League
+
+| Team | Codes |
+| :----- | :--: |
+| **Manchester United FC** | `MUFC` |
+| **Tottenham Hotspur FC** | `THFC` |
+| **AFC Bournemouth** | `AFCB` |
+| **Aston Villa FC** | `AVFC` |
+| **Everton FC** | `EFC` |
+| **Watford FC** | `WAT` |
+| **Leicester City FC** | `LCFC` |
+| **Sunderland AFC** | `SUN` |
+| **Norwich City FC** | `NCFC` |
+| **Crystal Palace FC** | `CRY` |
+| **Chelsea FC** | `CFC` |
+| **Swansea City FC** | `SWA` |
+| **Newcastle United FC** | `NUFC` |
+| **Southampton FC** | `SFC` |
+| **Arsenal FC** | `AFC` |
+| **West Ham United FC** | `WHU` |
+| **Stoke City FC** | `SCFC` |
+| **Liverpool FC** | `LFC` |
+| **West Bromwich Albion FC** | `WBA` |
+| **Manchester City FC** | `MCFC` |
+
+ ## English Championship
+
+| Team | Codes |
+| :----- | :--: |
+| **Sheffield United FC** | `SUSFC` |
+
+ ## Eredivisie
+
+| Team | Codes |
+| :----- | :--: |
+| **PSV Eindhoven** | `PSV` |
+
+
+ ## Mixed
+
+| Team | Codes |
+| :----- | :--: |
+| **Malm\u00f6 FF** | `MFF` |
+| **FC Astana** | `ASTA` |
+| **Galatasaray SK** | `GSK` |
+| **CSKA Moscow** | `CSK` |
+| **Shakhtar Donetsk** | `SHA` |
+| **FC Zenit St. Petersburg** | `ZEN` |
+| **Dynamo Kyiv** | `DYK` |
+| **Maccabi Tel Aviv** | `MTA` |
+| **Olympiacos F.C.** | `OLA` |
+| **GNK Dinamo Zagreb** | `DIN` |
+| **Erzgebirge Aue** | `AUE` |
+| **SC Bastia** | `SCB` |
+
+
 
  ## Credits: 
  Logo Courtesy:
