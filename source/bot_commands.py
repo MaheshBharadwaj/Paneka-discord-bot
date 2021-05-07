@@ -57,7 +57,7 @@ def getFixtures(code, limit: int):
         The ID of the league or team for which fixtures are required
     limit: int, optional
         Number of fixtures to display (default value of 5)
-  
+
     Returns:
     --------
     discord.Embed
@@ -232,22 +232,25 @@ def getHelpEmbed(ctx=None):
         color=0xf58300)
     embed.set_thumbnail(
         url="https://img.icons8.com/fluent/144/000000/get-help.png")
-    embed.add_field(name=":one: .standings-all [league code]", inline=False,\
+    embed.add_field(name=":one: .standings-all [league code]", inline=False,
                     value="Detailed Standings, with team codes")
-    embed.add_field(name=":two: .standings [league code]", inline=False,\
+    embed.add_field(name=":two: .standings [league code]", inline=False,
                     value="Display Standings")
-    embed.add_field(name=":three: .fixtures [league code or team code] [limit (default: :five: )]", inline=False,\
+    embed.add_field(name=":three: .fixtures [league code or team code] [limit (default: :five: )]", inline=False,
                     value="Displays fixtures of matches of the league or team",)
-    embed.add_field(name=":four: .live [league code or team code] [limit (default:  :five:  )]", inline=False,\
+    embed.add_field(name=":four: .live [league code or team code] [limit (default:  :five:  )]", inline=False,
                     value='Display Live Matches of the league or team')
-    embed.add_field(name=":five: .league-codes", inline=False,\
+    embed.add_field(name=":five: .league-codes", inline=False,
                     value="Displays Leagues and their Respective Codes")
-    embed.add_field(name=":six: .team-codes", inline=False,\
+    embed.add_field(name=":six: .team-codes", inline=False,
                     value="Displayes Teams and their Respective Codes")
-    embed.add_field(name=":seven: .invite", inline=False,\
+    embed.add_field(name=":seven: .invite", inline=False,
                     value="Invite bot to your servers!")
     embed.add_field(
         name="\u200b", value=":computer: Link to GitHub Repository: [Click Here](https://github.com/MaheshBharadwaj/paneka)", inline=False)
+    embed.add_field(
+        name="\u200b", value=":shield: Link to Support Server: [Discord Invite](https://discord.gg/DXPgJaMsZe)", inline=False
+    )
     if ctx is not None:
         embed.set_footer(text='Requested By: ' + str(ctx.author))
 

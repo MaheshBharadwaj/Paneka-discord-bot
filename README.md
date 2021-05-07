@@ -1,5 +1,5 @@
 <h1 align="center">Paneka</h1>
-<p align = "center"><img src = "https://maheshk23.imfast.io/Paneka/logo.png"><br><br>
+<p align = "center"><img src = "assets/logo.png"><br><br>
 <img src = "https://img.shields.io/github/languages/top/MaheshBharadwaj/paneka?logo=python&logoColor=%23dddddd&style=flat-square">
 <img src = "https://img.shields.io/github/v/tag/MaheshBharadwaj/paneka?color=%2349a305&label=Release&logo=github&logoColor=%23dddddd&style=flat-square">
 <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/MaheshBharadwaj/paneka?color=%2349a305&label=Contributors&logo=GitHub&style=flat-square">
@@ -20,7 +20,7 @@ Displays the commands available for usage
 **usage:** `.help`
 
 <p align="center">
-<img alt="help image" src="https://maheshk23.imfast.io/Paneka/help-command-v2.png">
+<img alt="help image" src="assets/help-command-v2.png">
 </p>
 
 ### 2. Standings All
@@ -29,7 +29,7 @@ Generates a more _detailed_ table showing goals for, against, matches won and lo
 **usage:** `.standings-all [league code]`
 
 <p align="center">
-<img alt="standings-all image" src="https://maheshk23.imfast.io/Paneka/standings-all-v2.png">
+<img alt="standings-all image" src="assets/standings-all-v2.png">
 </p>
 
 ### 3. Standings
@@ -38,7 +38,7 @@ Generates the _current standings_ in the requested league.
 **usage:** `.standings [league code]`
 
 <p align="center">
-<img alt="standings image" src="https://maheshk23.imfast.io/Paneka/standings-v2.png">
+<img alt="standings image" src="assets/standings-v2.png">
 </p>
 
 ### 4. Fixtures
@@ -51,13 +51,13 @@ Limit restricts the number of fixtures displayed and is by default 5
 #### 4.1 League Fixtures
 
 <p align="center">
-<img alt="League Fixtures image" src="https://maheshk23.imfast.io/Paneka/league-fixtures-v2.png">
+<img alt="League Fixtures image" src="assets/league-fixtures-v2.png">
 </p>
 
 #### 4.2 Team Fixtures
 
 <p align="center">
-<img alt="Team Fixtures image" src="https://maheshk23.imfast.io/Paneka/team-fixtures-v2.png">
+<img alt="Team Fixtures image" src="assets/team-fixtures-v2.png">
 </p>
 
 ### 5. Live Scores
@@ -68,7 +68,7 @@ Displays the live scores of matches in league requested or team requested
 Limit restricts number of matches displayed and is by default 5
 
 <p align="center">
-<img alt="Team Fixtures image" src="https://maheshk23.imfast.io/Paneka/live-league-v2.png">
+<img alt="Team Fixtures image" src="assets/live-league-v2.png">
 </p>
 
 ### 6. Invite
@@ -77,7 +77,7 @@ Sends the URL to invite bot into servers as a _Direct Message_
 **usage:** `.invite`
 
 <p align="center">
-<img alt="Invite Command image" src="https://maheshk23.imfast.io/Paneka/invite-command-v2.png">
+<img alt="Invite Command image" src="assets/invite-command-v2.png">
 </p>
 
 
